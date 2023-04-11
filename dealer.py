@@ -7,7 +7,7 @@ class Dealer:
         self.hand = Hand()
 
     def get_str_handh(self):
-        return str(self.hand.cards[0])
+        return str(self.hand.cards[0]) + ", Uknown"
 
     def get_str_hand(self):
         return str(self.hand)

@@ -35,12 +35,14 @@ class Game:
             self.dealer.hand.add_card(self.deck.deal_card())
             print("Dealer's up card is:", self.dealer.get_str_handh())
             while True:
-                print("Your hand is:", self.player.get_str_hand())
+                print("Your hand is:", self.player.get_str_hand(),
+                      "Your score is:", self.player.hand.get_value())
                 hit_or_stand = input("Do you want to hit or stand? ")
                 if hit_or_stand.lower() == "hit":
                     new_card = self.deck.deal_card()
                     self.player.hand.add_card(new_card)
-                    print(f"You have been dealt {new_card}")
+                    print(
+                        f"You have been dealt {new_card} current hand score:", self.player.hand.get_value())
                     if self.player.hand.get_value() == 21:
                         print(f"Blackjack! You win ${self.bet * 1.5} :)")
                         self.player.balance += (self.bet * 1.5)
@@ -53,7 +55,7 @@ class Game:
                 elif hit_or_stand.lower() == "stand":
                     while self.dealer.hand.get_value() < 17:
                         self.dealer.hit(self.deck)
-                    print("Dealer's hand is:", self.dealer.get_str_hand())
+                    print("Dealer's new hand is:", self.dealer.get_str_hand())
                     if self.dealer.hand.get_value() > 21:
                         print("Dealer bust! You win.")
                         self.player.balance += self.bet
