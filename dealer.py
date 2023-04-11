@@ -6,8 +6,11 @@ class Dealer:
         pass
         self.hand = Hand()
 
-    def get_str_hand(self):
+    def get_str_handh(self):
         return str(self.hand.cards[0])
+
+    def get_str_hand(self):
+        return str(self.hand)
 
     def hit(self, deck):
         self.hand.add_card(deck.deal_card())
