@@ -23,7 +23,7 @@ class Game:
                     break
                 except ValueError:
                     print("Invalid bet, please try again.")
-            print(f"You have bet {self.bet} chips.")
+            print(f"You have bet ${self.bet} chips.")
             self.deck = Deck()
             self.deck.shuffle()
             self.player.hand = Hand()
@@ -63,5 +63,5 @@ class Game:
                         break
                 else:
                     print("Invalid input, please try again.")
-            print(f"Your balance is now {self.player.get_balance()}.")
+            print(f"Your balance is now ${self.player.get_balance()}.")
         print("Game over. You are out of chips.")

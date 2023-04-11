@@ -7,7 +7,7 @@ class Dealer:
         self.hand = Hand()
 
     def get_str_hand(self):
-        return str(self.hand)
+        return str(self.hand.cards[0])
 
     def hit(self, deck):
         self.hand.add_card(deck.deal_card())
